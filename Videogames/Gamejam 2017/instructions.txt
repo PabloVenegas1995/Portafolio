@@ -1,0 +1,11 @@
+Go to build->html->galaxy_subway
+
+Run index.html
+
+Press ok and wait until its charged.
+
+Recommended running it on firefox latest versions
+
+Or if Construct 2 is installed, go to source code
+
+and open Galaxy_Subway_v1.0.capx and run it.

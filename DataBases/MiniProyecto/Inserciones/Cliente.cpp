@@ -1,0 +1,1 @@
+INSERT INTO "cliente" (RUT,Nombre,Direccion,CodigoPostal) VALUES ('11.111.111-1','Danny Rand','1 Hells Kitchen','1111'),('22.222.222-2','Matt Murdock','2 Hells Kitchen','2222'),('33.333.333-3','John Smith','3 Hells Kitchen','3333'),('44.444.444-4','Jessica Jones','4 Hells Kitchen','4444'),('55.555.555-5','Luke Cage','5 Hells Kitchen','5555');

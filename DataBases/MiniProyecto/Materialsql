@@ -1,0 +1,62 @@
+CREATE TABLE Material
+(CodigoMaterial int, 
+Nombre char(50), 
+Descripcion char(50), 
+Zona int, 
+Nicho int,
+PRIMARY KEY (CodigoMaterial)
+);
+
+CREATE TABLE Proveedor
+(RUT int,
+Nombre char(50),
+Telefono int,
+Direccion char(50),
+PRIMARY KEY (RUT)
+);
+
+CREATE TABLE PedidoAProveedor
+(
+CodigoPedido int,
+Cantidad int,
+MaterialSolicitado char(50),
+Precio int,
+PRIMARY KEY (CodigoPedido)
+);
+
+CREATE TABLE Cliente
+(
+RUT int,
+Nombre char(50),
+Direccion char(50),
+CodigoPostal int,
+/*/NumerosDeContacto MULTIEVALUADO ___________--------------///////////*/
+PRIMARY KEY (RUT)
+);
+
+CREATE TABLE Presupuesto
+(
+RUTCliente int,
+MaterialSolicitado char(50),
+Precio int,
+FOREIGN KEY (RUTCliente) REFERENCES Cliente(RUT)
+);
+
+CREATE TABLE PedidoAEmpresa
+(
+RUTCliente int,
+Fecha datetime,
+NumeroPedido int,
+FOREIGN KEY RUTCliente REFERENCES Presupuesto(RUTCliente)
+);
+
+CREATE TABLE RealizadaMediante
+(
+RUTProveedor int,
+CodigoMaterial int,
+CodigoPedido int, 
+Fecha datetime
+FOREIGN KEY (RUTProveedor) REFERENCES Proveedor(RUT),
+FOREIGN KEY (CodigoMaterial) REFERENCES Material(CodigoMaterial),
+FOREIGN KEY (CodigoPedido) REFERENCES PedidoAProveedor(CodigoPedido)
+);
